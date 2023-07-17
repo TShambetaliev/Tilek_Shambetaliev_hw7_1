@@ -12,6 +12,12 @@ interface VideoDao {
     @Query("SELECT * FROM contacts")
     suspend fun getVideo(): List<VideoEntity>
 
+    @Query("SELECT * FROM contacts ORDER BY family_id DESC")
+    suspend fun getVideoFromLast(): List<VideoEntity>
+
+    @Query("SELECT * FROM contacts ORDER BY family_name ASC")
+    suspend fun getFVideoSortByName(): List<VideoEntity>
+
     @Update
     suspend fun updateVideo(videoEntity: VideoEntity)
 

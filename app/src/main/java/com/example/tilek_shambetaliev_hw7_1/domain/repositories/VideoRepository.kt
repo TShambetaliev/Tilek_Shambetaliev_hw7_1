@@ -1,14 +1,19 @@
 package com.example.tilek_shambetaliev_hw7_1.domain.repositories
 
-import com.example.tilek_shambetaliev_hw7_1.data.models.VideoEntity
+import com.example.tilek_shambetaliev_hw7_1.domain.models.Video
+import com.example.tilek_shambetaliev_hw7_1.domain.utils.Resource
+import kotlinx.coroutines.flow.Flow
 
 interface VideoRepository {
 
-    fun addVideo(videoEntity: VideoEntity)
+    fun addVideo(video: Video): Flow<Resource<Unit>>
 
-    fun getVideo(): List<VideoEntity>
+    fun getVideo(): Flow<Resource<List<Video>>>
 
-    fun updateVideo(videoEntity: VideoEntity)
+    fun getFamilyFromLast(): Flow<Resource<List<Video>>>
+    fun getFamilySortByName(): Flow<Resource<List<Video>>>
 
-    fun deleteVideo(videoEntity: VideoEntity)
+    fun updateVideo(video: Video): Flow<Resource<Unit>>
+
+    fun deleteVideo(video: Video): Flow<Resource<Unit>>
 }
