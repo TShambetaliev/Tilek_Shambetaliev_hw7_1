@@ -4,7 +4,7 @@ import androidx.room.Entity
 import androidx.room.PrimaryKey
 
 @Entity(tableName = "contacts")
-data class ContactEntity(
+data class VideoEntity(
 
     @PrimaryKey(autoGenerate = true)
     val id: Int,

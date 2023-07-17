@@ -1,7 +1,7 @@
 package com.example.tilek_shambetaliev_hw7_1.domain.models
 
 
-data class Contact(
+data class Video(
 
     val id: Int,
     val name: String,
