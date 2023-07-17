@@ -9,7 +9,7 @@ class GetVideoUseCase(
     private val videoRepository: VideoRepository
 ) {
 
-    fun getContacts(): Flow<Resource<List<Video>>> {
+    suspend fun getVideo(): Flow<Resource<List<Video>>> {
         return videoRepository.getVideo()
     }
 }

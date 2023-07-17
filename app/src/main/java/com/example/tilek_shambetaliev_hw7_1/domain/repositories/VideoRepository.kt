@@ -6,14 +6,14 @@ import kotlinx.coroutines.flow.Flow
 
 interface VideoRepository {
 
-    fun addVideo(video: Video): Flow<Resource<Unit>>
+    suspend fun addVideo(video: Video): Flow<Resource<Unit>>
 
-    fun getVideo(): Flow<Resource<List<Video>>>
+    suspend fun getVideo(): Flow<Resource<List<Video>>>
 
-    fun getFamilyFromLast(): Flow<Resource<List<Video>>>
-    fun getFamilySortByName(): Flow<Resource<List<Video>>>
+    fun getVideoFromLast(): Flow<Resource<List<Video>>>
+    fun getVideoSortByName(): Flow<Resource<List<Video>>>
 
-    fun updateVideo(video: Video): Flow<Resource<Unit>>
+   suspend fun updateVideo(video: Video): Flow<Resource<Unit>>
 
-    fun deleteVideo(video: Video): Flow<Resource<Unit>>
+   suspend fun deleteVideo(video: Video): Flow<Resource<Unit>>
 }

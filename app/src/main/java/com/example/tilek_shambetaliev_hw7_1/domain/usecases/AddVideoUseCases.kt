@@ -8,7 +8,7 @@ class AddVideoUseCases (
     private val contactRepository: VideoRepository
     ){
 
-    fun addVideo(video: Video){
+    suspend fun addVideo(video: Video){
         contactRepository.addVideo(video)
     }
 }

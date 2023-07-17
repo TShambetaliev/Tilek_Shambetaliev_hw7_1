@@ -4,7 +4,7 @@ import com.example.tilek_shambetaliev_hw7_1.domain.models.Video
 import com.example.tilek_shambetaliev_hw7_1.domain.repositories.VideoRepository
 
 class DeleteVideoUseCase(private val videoRepository: VideoRepository) {
-    fun execute(video: Video) {
+    suspend fun execute(video: Video) {
         videoRepository.deleteVideo(video)
     }
 }

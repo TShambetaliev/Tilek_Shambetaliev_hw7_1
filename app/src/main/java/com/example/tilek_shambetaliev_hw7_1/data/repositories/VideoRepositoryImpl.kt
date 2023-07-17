@@ -12,7 +12,7 @@ import kotlinx.coroutines.flow.flow
 import kotlinx.coroutines.flow.flowOn
 
 class VideoRepositoryImpl(private val videoDao: VideoDao) : VideoRepository {
-    override fun addVideo(video: Video): Flow<Resource<Unit>> {
+    override suspend fun addVideo(video: Video): Flow<Resource<Unit>> {
         return flow {
             emit(Resource.Loading())
             try {
@@ -39,7 +39,7 @@ class VideoRepositoryImpl(private val videoDao: VideoDao) : VideoRepository {
         }.flowOn(Dispatchers.IO)
     }
 
-    override fun getFamilyFromLast(): Flow<Resource<List<Video>>> {
+    override fun getVideoFromLast(): Flow<Resource<List<Video>>> {
         return flow {
             emit(Resource.Loading())
             try {
@@ -52,7 +52,7 @@ class VideoRepositoryImpl(private val videoDao: VideoDao) : VideoRepository {
         }.flowOn(Dispatchers.IO)
     }
 
-    override fun getFamilySortByName(): Flow<Resource<List<Video>>> {
+    override fun getVideoSortByName(): Flow<Resource<List<Video>>> {
         return flow {
             emit(Resource.Loading())
             try {
