@@ -1,4 +1,4 @@
-package com.example.tilek_shambetaliev_hw7_1.di
+package com.example.tilek_shambetaliev_hw7_1.domain.di
 
 import android.content.Context
 import androidx.room.Room
